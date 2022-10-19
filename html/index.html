@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<h1>Simple Led Program in JS</h1>
+<!-- create button for led turn on or turn off function -->
+<button id="R" style="color: red;">Red</button>
+</body>
+<script>
+    
+    document.getElementById("R").addEventListener("click", function () {            //add an eventListener to the created button --> react when button get pressed
+        fetch('/r',{                                                                //method to send a diffrent request to the webserver with '/r' url --> if not nearly specified the address of the running server will be used and '/r' will be added to url
+            method: "post",                                                         //specify the type of method --> post --> send to the server and not asking the server --> no response nedded
+            body: JSON.stringify({item: 1})                                         //set the body content --> JSON.stringify --> makes correct json out of js object
+        });
+    });
+</script>
+</html>
